@@ -1,20 +1,18 @@
 const route = require('express').Router()
 
-const questionController = require('./controllers/questionController')
+const examController = require('./controllers/examController')
 
-route.get('/', questionController.index)
-
-route.get('/exams', (req, res) => {
-  res.send('SHOWING ALL OPEN EXAMS')
+route.get('/', (req, res) => {
+  res.send('hello')
 })
+
+route.get('/exams', examController.index)
 
 route.get('/exams/:id', (req, res) => {
   res.send('EXAM ID EXAMPLE')
 })
 
-route.post('/add-exam', (req, res) => {
-  res.send('Added an exam')
-})
+route.post('/add-exam', examController.store)
 
 route.post('/edit-exam/:id', (req, res) => {
   res.send('Editting exam')

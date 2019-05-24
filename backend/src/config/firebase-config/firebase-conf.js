@@ -6,6 +6,4 @@ admin.initializeApp({
   databaseURL: 'https://lyncas-nodejsteste.firebaseio.com'
 })
 
-const db = admin.firestore()
-
-module.exports = db
+module.exports = admin
